@@ -1,7 +1,7 @@
 interface CardProps {
   title: string;
   children: any;
-  cardClassName?: string;
+  className?: string; // Card overall class
   headerStyle?: React.CSSProperties;
   headerClassName?: string;
 }
@@ -9,12 +9,12 @@ interface CardProps {
 const Card = ({
   title,
   children,
-  cardClassName,
+  className,
   headerClassName,
   headerStyle,
 }: CardProps): JSX.Element => {
   return (
-    <div className={`card ${cardClassName}`}>
+    <div className={`card ${className}`}>
       <div className="card-meta"></div>
       <div className={`card-header ${headerClassName}`} style={headerStyle}>
         <div className="card-header-title">{title}</div>
