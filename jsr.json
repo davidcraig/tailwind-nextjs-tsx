@@ -1,5 +1,6 @@
 {
-  "name": "@davidcraig/tailwind-react-tsx",
+  "name": "@davidcraig/tailwind-nextjs-tsx",
   "version": "0.1.0",
-  "exports": "./src/index.tsx"
+  "exports": "./src/index.tsx",
+  "license": "MIT"
 }
