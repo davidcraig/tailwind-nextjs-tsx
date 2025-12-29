@@ -1,6 +1,6 @@
 interface CardProps {
   title: string;
-  children: any;
+  children?: any;
   className?: string; // Card overall class
   headerStyle?: React.CSSProperties;
   headerClassName?: string;
