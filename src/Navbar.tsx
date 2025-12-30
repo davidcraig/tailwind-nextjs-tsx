@@ -152,7 +152,7 @@ export default function Navigation({
         </button>
       </div>
       <div
-        className={`nav-links w-full gap-4 flex-col md:flex-wrap md:min-w-0 md:max-w-full md:flex-row md:flex md:flex-1 md:ml-auto md:justify-end ${mobileOpen ? "is-open" : ""}`}
+        className={`nav-links flex w-full gap-4 flex-col md:flex-wrap md:min-w-0 md:max-w-full md:flex-row md:flex md:flex-1 md:ml-auto md:justify-end ${mobileOpen ? "is-open" : ""}`}
       >
         {pages.map((page) => {
           return renderNavigationItem(
