@@ -12,7 +12,7 @@ const Card = ({
   className,
   headerClassName,
   headerStyle,
-}: CardProps): JSX.Element => {
+}: CardProps): React.ReactElement => {
   return (
     <div className={`card ${className}`}>
       <div className="card-meta"></div>
