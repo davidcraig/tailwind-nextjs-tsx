@@ -1,6 +1,6 @@
 interface PageLink {
   name: string;
-  url: string;
+  href: string;
   className?: string;
 }
 
@@ -9,7 +9,7 @@ interface DropdownLink {
   pages?: NavbarItem[];
 }
 
-type NavbarItem = PageLink | DropdownLink;
+export type NavbarItem = PageLink | DropdownLink;
 
 interface DetailsLinkProps {
   id: string;
@@ -107,9 +107,9 @@ function renderNavigationItem(
   return (
     <Link
       className={itemCssClass}
-      key={item.slug}
+      key={item.href}
       title={item.name}
-      href={item.slug}
+      href={item.href}
       onClick={onNavigate}
     >
       {item.name}
