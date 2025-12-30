@@ -102,11 +102,7 @@ function renderNavigationItem(
       </DetailsLink>
     );
   }
-  let itemCssClass = "";
-  if (item.wowClassColour) {
-    itemCssClass = item.slug.replace("/classes/", "");
-    console.log(itemCssClass);
-  }
+  let itemCssClass = item.cssClass || "";
   return (
     <Link
       className={itemCssClass}
