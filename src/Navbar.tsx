@@ -133,7 +133,7 @@ export default function Navigation({
   Link,
   pages,
   useState,
-}: NavigationProps) {
+}: NavigationProps): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});
   return (
