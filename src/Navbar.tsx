@@ -6,7 +6,7 @@ interface PageLink {
 
 interface DropdownLink {
   name: string;
-  pages?: NavbarItem[];
+  pages: NavbarItem[];
 }
 
 export type NavbarItem = PageLink | DropdownLink;
@@ -79,7 +79,7 @@ function renderNavigationItem(
   Link: React.FC<LinkProps>,
   depth = 0,
 ) {
-  if (item.pages) {
+  if ("pages" in item) {
     return (
       <DetailsLink
         key={item.name}
