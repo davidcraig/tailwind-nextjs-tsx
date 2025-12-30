@@ -135,7 +135,7 @@ export default function Navigation({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});
   return (
-    <nav className={`${className || ""}`}>
+    <nav className={className}>
       <div className="flex items-center w-full md:w-auto justify-between md:justify-start">
         <a className="brand font-bold text-xl shrink-0 mr-4" href="/">
           {brand}
@@ -147,22 +147,22 @@ export default function Navigation({
         >
           <span>☰</span>
         </button>
-        <div
-          className={`nav-links w-full gap-4 md:flex-1 md:ml-auto md:justify-end md:items-center text-center ${mobileOpen ? "is-open" : ""}`}
-        >
-          {pages.map((page) => {
-            return renderNavigationItem(
-              page,
-              () => {
-                setMobileOpen(false);
-                setOpenByDepth({});
-              },
-              openByDepth,
-              setOpenByDepth,
-              Link,
-            );
-          })}
-        </div>
+      </div>
+      <div
+        className={`nav-links w-full gap-4 md:flex-1 md:ml-auto md:justify-end md:items-center text-center ${mobileOpen ? "is-open" : ""}`}
+      >
+        {pages.map((page) => {
+          return renderNavigationItem(
+            page,
+            () => {
+              setMobileOpen(false);
+              setOpenByDepth({});
+            },
+            openByDepth,
+            setOpenByDepth,
+            Link,
+          );
+        })}
       </div>
     </nav>
   );
