@@ -1,10 +1,14 @@
 {
   "name": "@davidcraig/tailwind-nextjs-tsx",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "dependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.3"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "main": "src/index.tsx",
   "files": [
