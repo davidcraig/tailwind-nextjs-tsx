@@ -16,6 +16,7 @@ interface ExternalLinkProps {
   href: string;
   title: string;
   externalLinkStyle?: React.CSSProperties;
+  className?: string;
 }
 
 const ExternalLink = ({
@@ -25,10 +26,11 @@ const ExternalLink = ({
     marginLeft: "0.5rem",
     marginRight: "0.5rem",
   },
+  className = "ml-4 p-4 md:p-0 flex",
 }: ExternalLinkProps): React.ReactElement => {
   return (
     <a
-      className="ml-4 p-4 md:p-0 flex"
+      className={className}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
