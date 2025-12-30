@@ -25,4 +25,5 @@ jobs:
 
       - run: npm install
       - run: npm whoami
+      - run: rm -rf .npmrc
       - run: npm publish --provenance --access public
