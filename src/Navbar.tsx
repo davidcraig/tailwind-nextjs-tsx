@@ -132,6 +132,7 @@ export default function Navigation({
   className,
   Link,
   pages,
+  brand,
   useState,
 }: NavigationProps): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -140,7 +141,7 @@ export default function Navigation({
     <nav className={`navbar p-4 flex flex-col gap-4 md:flex-row ${className}`}>
       <div className="flex items-center w-full md:w-auto justify-between md:justify-start">
         <a className="brand font-bold text-xl shrink-0 mr-4" href="/">
-          Brand
+          {brand}
         </a>
         <button
           aria-label="Toggle navigation"
