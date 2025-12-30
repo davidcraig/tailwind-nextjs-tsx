@@ -25,7 +25,7 @@ const ExternalLink = ({
     marginLeft: "0.5rem",
     marginRight: "0.5rem",
   },
-}: ExternalLinkProps) => {
+}: ExternalLinkProps): React.ReactElement => {
   return (
     <a
       className="ml-4 p-4 md:p-0 flex"
