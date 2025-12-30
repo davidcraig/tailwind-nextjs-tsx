@@ -10,11 +10,20 @@ Components:
 
     bunx jsr add @davidcraig/tailwind-nextjs-tsx
   
-tailwind.config.js:
+## tailwind.config.js:
 
-Add the following to your tailwind.config.js file:
+Add the following:
 
     content: [
       ...
       "./node_modules/@davidcraig/**/*.tsx",
     ]
+
+## next.config.js:
+
+Add:
+
+    const nextConfig = {
+      ...
+      transpilePackages: ["@davidcraig/tailwind-nextjs-tsx"],
+    }
