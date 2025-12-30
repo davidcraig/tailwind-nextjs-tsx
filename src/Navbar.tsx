@@ -107,7 +107,7 @@ function renderNavigationItem(
   }
   return (
     <Link
-      className={item.className || "navbar-link"}
+      className={item.className ? `${item.className} navbar-link` : "navbar-link"}
       key={item.href}
       title={item.name}
       href={item.href}
@@ -133,7 +133,7 @@ export default function Navigation({
   Link,
   useState,
   className = "navbar p-4 flex flex-col gap-4 md:flex-row",
-  detailsClassName = "md:pl-2 md:mr-4 md:ml-4",
+  detailsClassName = "",
 }: NavigationProps): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});

@@ -9,6 +9,10 @@
     @apply my-2;
 }
 
+details {
+    @apply md:mr-2;
+}
+
 .navbar-dropdown a.navbar-item:focus,
 .navbar-dropdown a.navbar-item:hover,
 a.navbar-item:focus,
@@ -88,8 +92,8 @@ details[open] > .navbar-dropdown,
     top: 100%;
     left: 0;
     width: max-content;
-    max-height: 60vh;
-    overflow: visible;
+    overflow: scroll;
+    max-height: 50vh;
     z-index: 1000;
     padding: 0.5rem;
     background: var(--twnexttsx-bg-2);
@@ -103,8 +107,8 @@ details[open] > .navbar-dropdown,
   }
   .nav-details > .navbar-dropdown .nav-details > .navbar-dropdown {
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: -.5rem;
+    left: calc(100% + 1rem);
     width: max-content;
     z-index: 1002;
     padding: 0.5rem;
