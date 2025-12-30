@@ -61,7 +61,7 @@ const DetailsLink = ({
   return (
     <details
       key={id}
-      className={`navbar-item ml-4 nav-details nav-depth-${depth} ${className}`}
+      className={`navbar-item nav-details nav-depth-${depth} ${className}`}
       open={isOpen}
       onToggle={handleToggle}
     >
@@ -77,13 +77,14 @@ function renderNavigationItem(
   openByDepth: any,
   setOpenByDepth: any,
   Link: React.FC<LinkProps>,
+  detailsClassName: string = "",
   depth = 0,
 ) {
   if ("pages" in item) {
     return (
       <DetailsLink
         key={item.name}
-        className="pr-2 mr-4 ml-4"
+        className={detailsClassName}
         id={item.name}
         title={item.name}
         depth={depth}
@@ -97,16 +98,16 @@ function renderNavigationItem(
             openByDepth,
             setOpenByDepth,
             Link,
+            detailsClassName,
             depth + 1,
           );
         })}
       </DetailsLink>
     );
   }
-  let itemCssClass = item.className || "";
   return (
     <Link
-      className={itemCssClass}
+      className={item.className || "navbar-link"}
       key={item.href}
       title={item.name}
       href={item.href}
@@ -119,18 +120,20 @@ function renderNavigationItem(
 
 interface NavigationProps {
   brand: string;
-  className?: string;
   pages: NavbarItem[];
   Link: React.FC;
   useState: Function;
+  className?: string;
+  detailsClassName?: string;
 }
 
 export default function Navigation({
-  className = "navbar p-4 flex flex-col gap-4 md:flex-row",
-  Link,
-  pages,
   brand,
+  pages,
+  Link,
   useState,
+  className = "navbar p-4 flex flex-col gap-4 md:flex-row",
+  detailsClassName = "md:pl-2 md:mr-4 md:ml-4",
 }: NavigationProps): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});
@@ -149,7 +152,7 @@ export default function Navigation({
         </button>
       </div>
       <div
-        className={`nav-links w-full gap-4 md:flex-1 md:ml-auto md:justify-end md:items-center text-center ${mobileOpen ? "is-open" : ""}`}
+        className={`nav-links w-full gap-4 md:flex-wrap md:min-w-0 md:max-w-full md:flex-row md:flex md:flex-1 md:ml-auto md:justify-end ${mobileOpen ? "is-open" : ""}`}
       >
         {pages.map((page) => {
           return renderNavigationItem(
@@ -161,6 +164,7 @@ export default function Navigation({
             openByDepth,
             setOpenByDepth,
             Link,
+            detailsClassName,
           );
         })}
       </div>
