@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface PageLink {
   name: string;
   url: string;
@@ -127,12 +125,14 @@ interface NavigationProps {
   className?: string;
   pages: NavbarItem[];
   Link: React.FC;
+  useState: Function;
 }
 
 export default function Navigation({
   className,
   Link,
   pages,
+  useState,
 }: NavigationProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});
