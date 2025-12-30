@@ -1,6 +1,7 @@
 interface PageLink {
   name: string;
   url: string;
+  className?: string;
 }
 
 interface DropdownLink {
@@ -102,7 +103,7 @@ function renderNavigationItem(
       </DetailsLink>
     );
   }
-  let itemCssClass = item.cssClass || "";
+  let itemCssClass = item.className || "";
   return (
     <Link
       className={itemCssClass}
