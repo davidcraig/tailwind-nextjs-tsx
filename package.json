@@ -15,5 +15,8 @@
   "types": "src/index.tsx",
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "jsr": {
+    "name": "@davidcraig/tailwind-nextjs-tsx"
+  }
 }
