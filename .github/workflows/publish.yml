@@ -15,6 +15,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Remove uncommitted changes
-        run: git reset --hard
+        run: rm -rf package-lock.json
       - name: Publish package
         run: npx jsr publish
