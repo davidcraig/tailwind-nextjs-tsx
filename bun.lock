@@ -8,8 +8,8 @@
         "react": "^19.2.3",
       },
       "peerDependencies": {
-        "react": ">=18",
-        "react-dom": ">=18",
+        "react": "^19.2.3",
+        "react-dom": "^19.2.3",
       },
     },
   },
