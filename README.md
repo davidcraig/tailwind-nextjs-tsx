@@ -6,10 +6,13 @@ Components:
 - Navbar
 
 
-# Installation
+# Installation (Bun)
 
     bunx jsr add @davidcraig/tailwind-nextjs-tsx
-  
+
+# Installation (Git Subtree)
+git subtree add --prefix=packages/tailwind-nextjs-tsx git@github.com:davidcraig/tailwind-nextjs-tsx main --squash
+
 ## tailwind.config.js:
 
 Add the following:
