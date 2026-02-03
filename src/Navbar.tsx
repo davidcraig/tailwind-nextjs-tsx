@@ -127,6 +127,7 @@ interface NavigationProps {
   useState: Function;
   className?: string;
   detailsClassName?: string;
+  children?: React.ReactNode;
 }
 
 export default function Navigation({
@@ -136,6 +137,7 @@ export default function Navigation({
   useState,
   className = "navbar p-4 flex flex-col gap-4 md:flex-row",
   detailsClassName = "",
+  children,
 }: NavigationProps): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openByDepth, setOpenByDepth] = useState({});
@@ -150,11 +152,11 @@ export default function Navigation({
           className="navbar-burger md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span>☰</span>
+          <span>{mobileOpen ? "×" : "☰"}</span>
         </button>
       </div>
       <div
-        className={`nav-links flex w-full gap-4 flex-col md:flex-wrap md:min-w-0 md:max-w-full md:flex-row md:flex md:flex-1 md:ml-auto md:justify-end ${mobileOpen ? "is-open" : ""}`}
+        className={`nav-links mt-4 md:mt-0 w-full gap-4 flex-col md:flex-wrap md:min-w-0 md:max-w-full md:flex-row md:flex md:flex-1 md:ml-auto md:justify-end ${mobileOpen ? "flex" : "hidden"} md:items-center`}
       >
         {pages.map((page) => {
           return renderNavigationItem(
@@ -169,6 +171,7 @@ export default function Navigation({
             detailsClassName,
           );
         })}
+        {children}
       </div>
     </nav>
   );
